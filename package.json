@@ -17,7 +17,7 @@
     "swc"
   ],
   "scripts": {
-    "start": "npm run build:prod && cross-env NODE_ENV=production node dist/server.js",
+    "start": "npm run build:prod && cross-env NODE_ENV=production node dist/src/main/app/server.js",
     "dev": "cross-env NODE_ENV=development nodemon",
     "build:prod": "cross-env NODE_ENV=production swc src -d dist --source-maps --copy-files",
     "build:dev": "cross-env NODE_ENV=development swc src -d dist --source-maps --copy-files",
