@@ -17,6 +17,7 @@
   "scripts": {
     "start": "npm run build:prod && cross-env NODE_ENV=production node dist/src/server/main/app/server.js",
     "dev": "cross-env NODE_ENV=development nodemon",
+    "test": "vitest",
     "build:prod": "cross-env NODE_ENV=production swc src -d dist --source-maps --copy-files",
     "build:dev": "cross-env NODE_ENV=development swc src -d dist --source-maps --copy-files",
     "prisma:generate:dev": "dotenv -e .env.development.local -- npx prisma generate",
