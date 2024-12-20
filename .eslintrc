@@ -137,6 +137,7 @@
     "prefer-const": ["error"],
     "prefer-rest-params": ["error"],
     "prefer-template": ["error"],
-    "template-curly-spacing": ["error", "never"]
+    "template-curly-spacing": ["error", "never"],
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }
