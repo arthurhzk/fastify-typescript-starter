@@ -138,6 +138,8 @@
     "prefer-rest-params": ["error"],
     "prefer-template": ["error"],
     "template-curly-spacing": ["error", "never"],
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }
