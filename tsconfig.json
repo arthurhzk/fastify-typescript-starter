@@ -16,7 +16,6 @@
     "strict": true,
     "declaration": true,
     "outDir": "dist",
-    "allowJs": true,
     "noEmit": false,
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -24,15 +23,6 @@
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"],
-      "@config": ["config"],
-      "@interfaces/*": ["interfaces/*"],
-      "@utils/*": ["utils/*"],
-      "@constants/*": ["constants/*"],
-      "@plugins/*": ["plugins/*"],
-      "@components/*": ["components/*"],
-      "@exceptions/*": ["exceptions/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.json", ".env", "src/**/*.feature", "src/**/*.d.ts"],
-  "exclude": ["node_modules", "src/http", "src/logs", "src/tests"]
 }
