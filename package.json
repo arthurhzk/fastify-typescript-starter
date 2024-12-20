@@ -17,7 +17,7 @@
     "swc"
   ],
   "scripts": {
-    "start": "npm run build:prod && cross-env NODE_ENV=production node dist/src/main/app/server.js",
+    "start": "npm run build:prod && cross-env NODE_ENV=production node dist/src/server/main/app/server.js",
     "dev": "cross-env NODE_ENV=development nodemon",
     "build:prod": "cross-env NODE_ENV=production swc src -d dist --source-maps --copy-files",
     "build:dev": "cross-env NODE_ENV=development swc src -d dist --source-maps --copy-files",
@@ -38,7 +38,7 @@
     "schema": "src/prisma/schema.prisma",
     "seed": "ts-node src/prisma/seed.ts"
   },
-  "author": "TheB1gFatPanda",
+  "author": "Arthur Kunz",
   "license": "MIT",
   "dependencies": {
     "@fastify/compress": "6.4.0",
@@ -80,6 +80,7 @@
     "ts-node": "10.9.1",
     "tsc-alias": "1.8.7",
     "tsconfig-paths": "4.2.0",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "vitest": "^2.1.8"
   }
 }
