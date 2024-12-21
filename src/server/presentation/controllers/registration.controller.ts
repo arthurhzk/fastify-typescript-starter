@@ -1,3 +1,5 @@
+import { BadRequest } from '../../../shared/errors/bad-request.error';
+
 export class RegistrationController {
   async handle(httpRequest: any): Promise<any> {
     const { email, name, password, passwordConfirmation } = httpRequest.body;
@@ -8,7 +10,7 @@ export class RegistrationController {
       if (!httpRequest.body[field]) {
         return Promise.resolve({
           statusCode: 400,
-          body: new Error(`Missing param: ${field}`)
+          body: new BadRequest(`Missing param: ${field}`)
         });
       }
     }
@@ -16,7 +18,7 @@ export class RegistrationController {
     if (password !== passwordConfirmation) {
       return Promise.resolve({
         statusCode: 400,
-        body: new Error('Passwords do not match')
+        body: new BadRequest('Passwords do not match')
       });
     }
 
