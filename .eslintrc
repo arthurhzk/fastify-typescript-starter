@@ -67,9 +67,9 @@
     "no-multiple-empty-lines": ["error"],
     "no-spaced-func": ["error"],
     "no-trailing-spaces": ["error"],
-    "no-undef": ["error"],
+    "no-undef": "off",
     "no-unexpected-multiline": ["error"],
-    "no-empty-function": ["error"],
+    "no-empty-function": "off",
     "no-useless-catch": 0,
     "no-unused-vars": [
       "error",

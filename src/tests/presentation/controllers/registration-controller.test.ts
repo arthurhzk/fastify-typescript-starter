@@ -1,3 +1,4 @@
+/* eslint-disable prefer-template */
 import { beforeEach, describe, expect, it } from 'vitest';
 import { RegistrationController } from '../../../server/presentation/controllers/registration-controller';
 import { registrationFakeInput } from '../../domain/registration.fake';
@@ -13,8 +14,8 @@ describe('RegistrationController', () => {
         name: registrationFakeInput.name
       }
     };
-    const response = await sut.handle(httpRequest);
-    expect(response).toEqual({
+    const httpResponse = await sut.handle(httpRequest);
+    expect(httpResponse).toEqual({
       statusCode: 400,
       body: new Error('Missing param: email')
     });
@@ -25,8 +26,8 @@ describe('RegistrationController', () => {
         email: registrationFakeInput.email
       }
     };
-    const response = await sut.handle(httpRequest);
-    expect(response).toEqual({
+    const httpResponse = await sut.handle(httpRequest);
+    expect(httpResponse).toEqual({
       statusCode: 400,
       body: new Error('Missing param: name')
     });
@@ -37,13 +38,26 @@ describe('RegistrationController', () => {
         email: registrationFakeInput.email,
         name: registrationFakeInput.name,
         password: registrationFakeInput.password,
-        passwordConfirmation: 'different_password'
+        passwordConfirmation: registrationFakeInput.password + '1'
       }
     };
-    const response = await sut.handle(httpRequest);
-    expect(response).toEqual({
+    const httpResponse = await sut.handle(httpRequest);
+    expect(httpResponse).toEqual({
       statusCode: 400,
       body: new Error('Passwords do not match')
+    });
+  });
+  it('should return 400 if no password is provided', async () => {
+    const httpRequest = {
+      body: {
+        email: registrationFakeInput.email,
+        name: registrationFakeInput.name
+      }
+    };
+    const httpResponse = await sut.handle(httpRequest);
+    expect(httpResponse).toEqual({
+      statusCode: 400,
+      body: new Error('Missing param: password')
     });
   });
   it('should return 200 if valid data is provided', async () => {
@@ -55,12 +69,12 @@ describe('RegistrationController', () => {
         passwordConfirmation: registrationFakeInput.password
       }
     };
-    const response = await sut.handle(httpRequest);
-    expect(response).toEqual({
+    const httpResponse = await sut.handle(httpRequest);
+    expect(httpResponse).toEqual({
       statusCode: 200,
       body: {
-        id: 'valid_id',
-        email: registrationFakeInput.email
+        email: registrationFakeInput.email,
+        name: registrationFakeInput.name
       }
     });
   });

@@ -3,18 +3,17 @@ export class RegistrationController {
   async handle(httpRequest: any): Promise<any> {
     const { email, name, password, passwordConfirmation } = httpRequest.body;
 
-    if (!email) {
-      return Promise.resolve({
-        statusCode: 400,
-        body: new Error('Missing param: email')
-      });
+    const requiredFields = ['email', 'name', 'password'];
+
+    for (const field of requiredFields) {
+      if (!httpRequest.body[field]) {
+        return Promise.resolve({
+          statusCode: 400,
+          body: new Error(`Missing param: ${field}`)
+        });
+      }
     }
-    if (!name) {
-      return Promise.resolve({
-        statusCode: 400,
-        body: new Error('Missing param: name')
-      });
-    }
+
     if (password !== passwordConfirmation) {
       return Promise.resolve({
         statusCode: 400,
@@ -25,8 +24,8 @@ export class RegistrationController {
     return Promise.resolve({
       statusCode: 200,
       body: {
-        id: 'valid_id',
-        email
+        email,
+        name
       }
     });
   }
