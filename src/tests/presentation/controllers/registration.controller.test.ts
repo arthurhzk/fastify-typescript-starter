@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { RegistrationController } from '../../../server/presentation/controllers/registration.controller';
-import { registrationFakeInput } from '../../domain/registration.fake';
+import { RegistrationController } from '@auth/server/presentation/controllers/registration.controller';
+import { registrationFakeInput } from '@auth/tests/domain/registration.fake';
 
 describe('RegistrationController', () => {
   let sut: RegistrationController;

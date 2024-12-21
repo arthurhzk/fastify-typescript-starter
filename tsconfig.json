@@ -20,9 +20,11 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "importHelpers": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"],
+      "@auth/*": ["src/*"]
     }
   },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
