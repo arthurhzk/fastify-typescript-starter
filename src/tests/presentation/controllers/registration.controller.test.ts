@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { RegistrationController } from '../../../server/presentation/controllers/registration-controller';
+import { RegistrationController } from '../../../server/presentation/controllers/registration.controller';
 import { registrationFakeInput } from '../../domain/registration.fake';
 
 describe('RegistrationController', () => {
