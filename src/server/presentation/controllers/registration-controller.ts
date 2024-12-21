@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 export class RegistrationController {
   async handle(httpRequest: any): Promise<any> {
     const { email, name, password, passwordConfirmation } = httpRequest.body;

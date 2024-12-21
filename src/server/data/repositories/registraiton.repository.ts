@@ -1,5 +1,5 @@
 import { Registration } from '@/server/domain/registration.dto';
-import { RegistrationProtocol } from '../protocols/registration.protocol';
+import { RegistrationProtocol } from '@/server/data/protocols/registration.protocol';
 
 export class RegistrationRepository implements RegistrationProtocol {
   constructor(private readonly registrationRepository: RegistrationRepository) {}
