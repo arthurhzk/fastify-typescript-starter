@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import { BadRequest } from '../../../shared/errors/bad-request.error';
 import { ServerError } from '../../../shared/errors/server-error.error';
 

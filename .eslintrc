@@ -141,6 +141,7 @@
     "template-curly-spacing": ["error", "never"],
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-namespace": "off",
+    "no-await-in-loop": "off",
     "import/no-extraneous-dependencies": "off"
   }
 }
